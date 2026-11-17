@@ -1,0 +1,6 @@
+# Fonts are matched by file name and fetched from each pack's "fonts" URLs.
+# Remove these lines only for fonts whose license allows redistribution.
+fonts/*.ttf
+fonts/*.otf
+fonts/*.TTF
+fonts/*.OTF

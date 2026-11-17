@@ -1,0 +1,45 @@
+{
+  "format": "tcp-looks",
+  "version": 1,
+  "name": "Example Pack",
+  "author": "TCP theme template",
+  "description": "Three starter looks: a mix of built-in parts, a downloaded Google Font, and a from-scratch Custom look.",
+  "fonts": {
+    "Orbitron.ttf": {
+      "url": "https://github.com/google/fonts/raw/main/ofl/orbitron/Orbitron%5Bwght%5D.ttf",
+      "license": "OFL"
+    }
+  },
+  "looks": [
+    {
+      "id": "glass-terminal",
+      "name": "Glass Terminal",
+      "baseLook": "TERMINAL",
+      "card": "GLASS",
+      "tile": "GLASS_GLOW",
+      "backdrop": "AURORA"
+    },
+    {
+      "id": "orbit-hud",
+      "name": "Orbit HUD",
+      "baseLook": "TACTICAL_HUD",
+      "displayFont": { "file": "Orbitron.ttf" },
+      "ringValueScale": 0.24,
+      "colors": { "accent": "#FF22B8F0" }
+    },
+    {
+      "id": "soft-block",
+      "name": "Soft Block",
+      "baseLook": "AUTO",
+      "card": "CUSTOM",
+      "gauge": "CUSTOM",
+      "nav": "CUSTOM",
+      "panelCardShape": { "kind": "SQUIRCLE", "size": 0.25 },
+      "custom": {
+        "card": { "fill": "TONAL", "fillOpacity": 1, "borderWidth": 1.5, "border": "ACCENT", "shadow": 0, "glow": false },
+        "gauge": { "kind": "ARC", "thickness": 0.08, "roundCaps": true, "colors": "SPECTRUM", "glow": true },
+        "nav": { "indicator": "BLOCK" }
+      }
+    }
+  ]
+}
