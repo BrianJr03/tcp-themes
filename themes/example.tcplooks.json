@@ -13,7 +13,7 @@
   "looks": [
     {
       "id": "glass-terminal",
-      "name": "Glass Terminal",
+      "name": "Glass Terminal v2",
       "baseLook": "TERMINAL",
       "card": "GLASS",
       "tile": "GLASS_GLOW",
@@ -23,22 +23,12 @@
       "id": "orbit-hud",
       "name": "Orbit HUD",
       "baseLook": "TACTICAL_HUD",
-      "displayFont": { "file": "Orbitron.ttf" },
+      "displayFont": {
+        "file": "Orbitron.ttf"
+      },
       "ringValueScale": 0.24,
-      "colors": { "accent": "#FF22B8F0" }
-    },
-    {
-      "id": "soft-block",
-      "name": "Soft Block",
-      "baseLook": "AUTO",
-      "card": "CUSTOM",
-      "gauge": "CUSTOM",
-      "nav": "CUSTOM",
-      "panelCardShape": { "kind": "SQUIRCLE", "size": 0.25 },
-      "custom": {
-        "card": { "fill": "TONAL", "fillOpacity": 1, "borderWidth": 1.5, "border": "ACCENT", "shadow": 0, "glow": false },
-        "gauge": { "kind": "ARC", "thickness": 0.08, "roundCaps": true, "colors": "SPECTRUM", "glow": true },
-        "nav": { "indicator": "BLOCK" }
+      "colors": {
+        "accent": "#FF22B8F0"
       }
     }
   ]
