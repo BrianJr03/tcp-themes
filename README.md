@@ -84,3 +84,53 @@ Each look starts from a `baseLook` and overrides only what you set. **Keep each 
 | `custom` | Settings for parts set to `CUSTOM`. The easiest way to get these right is to build the look in Theme Studio and export it. |
 
 Unknown values are ignored (the base look's value is used), and numbers are clamped to safe ranges. A typo won't break a pack.
+
+### Telemetry gauges
+
+The **CPU / GPU / PWR / RAM** gauges are the only telemetry with selectable styles. TEMP/FAN and the FPS counter are text cards: they follow the look's card style and fonts, and `infoValueScale` sizes their numbers. Whether the gauges show as a 2×2 block or a single strip depends on the card's slot in the overlay layout, not on the look.
+
+**Use a built-in gauge style.** Set `gauge` to any value from the table above. This one puts Cartridge's segment meters on a Terminal look and trims the value text to fit:
+
+```json
+{
+  "id": "terminal-meters",
+  "name": "Terminal Meters",
+  "baseLook": "TERMINAL",
+  "gauge": "SEGMENT_METER",
+  "ringValueScale": 0.26
+}
+```
+
+**Design your own.** Set `"gauge": "CUSTOM"` and describe it under `custom.gauge`:
+
+```json
+{
+  "id": "spectrum-bars",
+  "name": "Spectrum Bars",
+  "baseLook": "AUTO",
+  "gauge": "CUSTOM",
+  "custom": {
+    "gauge": { "kind": "BAR", "thickness": 0.08, "roundCaps": true, "colors": "SPECTRUM", "glow": true }
+  }
+}
+```
+
+| `custom.gauge` field | Values |
+|---|---|
+| `kind` | `RING` (full circle), `ARC` (open at the bottom), `SEGMENTS` (a ring of blocks), `BAR` (a horizontal bar under the reading) |
+| `thickness` | `0.02`–`0.2`, as a fraction of the gauge size (default `0.07`) |
+| `roundCaps` | `true` for rounded ends, `false` for square |
+| `colors` | `CLASSIC` (the stock pink / cyan / orange / green), `ACCENT` (all one accent color), `SPECTRUM` (shades derived from the accent) |
+| `glow` | `true` adds a soft glow behind the filled part |
+
+**Fit the text.** Wide or tall fonts can clip inside small gauges. These top-level fields shrink or grow them:
+
+| Field | What it sizes | Range |
+|---|---|---|
+| `ringDiameterRatio` | The gauge itself, relative to its space | `0.5`–`1.0` |
+| `ringValueScale` | The big reading (e.g. `1.84`) | `0.1`–`0.45` |
+| `ringTitleScale` | The label (`CPU`, `GPU`, …) | `0.05`–`0.25` |
+| `ringUnitScale` | The unit (`GHz`, `MHz`, …) | `0.05`–`0.25` |
+| `infoValueScale` | TEMP / FAN numbers | `0.4`–`1.4` |
+
+Theme Studio's **Cards** preview shows every gauge size, so it's the quickest way to check a look doesn't clip.
