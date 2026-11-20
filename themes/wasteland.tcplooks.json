@@ -1,0 +1,78 @@
+{
+  "format": "tcp-looks",
+  "version": 1,
+  "name": "Wasteland",
+  "author": "BrianJr03",
+  "description": "Three retro-future survival looks: Wrist Terminal (green phosphor), Vault Blue (blue and yellow control room) and Atomic Cherry (translucent purple soda pop).",
+  "fonts": {
+    "ShareTechMono-Regular.ttf": { "url": "https://github.com/google/fonts/raw/main/ofl/sharetechmono/ShareTechMono-Regular.ttf", "license": "OFL" },
+    "Oswald[wght].ttf": { "url": "https://github.com/google/fonts/raw/main/ofl/oswald/Oswald%5Bwght%5D.ttf", "license": "OFL" },
+    "Righteous-Regular.ttf": { "url": "https://github.com/google/fonts/raw/main/ofl/righteous/Righteous-Regular.ttf", "license": "OFL" },
+    "Nunito[wght].ttf": { "url": "https://github.com/google/fonts/raw/main/ofl/nunito/Nunito%5Bwght%5D.ttf", "license": "OFL" }
+  },
+  "looks": [
+    {
+      "id": "wrist-terminal",
+      "name": "Wrist Terminal",
+      "baseLook": "TERMINAL",
+      "card": "TERMINAL_FRAME",
+      "tile": "TERMINAL_ROW",
+      "gauge": "RULER_BAR",
+      "slider": "SEGMENTED",
+      "nav": "BRACKETS",
+      "backdrop": "LCD_PIXEL_GRID",
+      "header": "TITLED_FRAME",
+      "labelFont": { "file": "ShareTechMono-Regular.ttf" },
+      "displayFont": { "file": "ShareTechMono-Regular.ttf" },
+      "labelCase": "UPPER",
+      "panelCardShape": { "kind": "RECT", "size": 0 },
+      "tileShape": { "kind": "RECT", "size": 0 },
+      "colors": { "accent": "#FF1AFF80", "accent2": "#FF0FA352", "background": "#FF020C05", "panel": "#FF04160A" },
+      "scanlines": true,
+      "glow": true,
+      "backdropPatternAlpha": 0.12,
+      "letterSpacingEm": 0.08,
+      "ringValueScale": 0.24
+    },
+    {
+      "id": "vault-blue",
+      "name": "Vault Blue",
+      "baseLook": "COCKPIT",
+      "card": "BEZEL",
+      "tile": "SWITCH_LED",
+      "gauge": "NEEDLE_DIAL",
+      "slider": "FADER",
+      "nav": "LED_SWITCH",
+      "header": "INDEXED_MONO",
+      "labelFont": { "file": "ShareTechMono-Regular.ttf" },
+      "displayFont": { "file": "Oswald[wght].ttf" },
+      "labelCase": "UPPER",
+      "panelCardShape": { "kind": "ROUNDED", "size": 6 },
+      "tileShape": { "kind": "ROUNDED", "size": 4 },
+      "colors": { "accent": "#FFFFD23F", "accent2": "#FF5FB8FF", "background": "#FF0A1A3A", "panel": "#FF10264F" },
+      "letterSpacingEm": 0.04,
+      "ringValueScale": 0.22
+    },
+    {
+      "id": "atomic-cherry",
+      "name": "Atomic Cherry",
+      "baseLook": "AURORA_GLASS",
+      "card": "GLASS",
+      "tile": "GEL",
+      "gauge": "CUSTOM",
+      "slider": "GEL",
+      "nav": "GEL_PILL",
+      "backdrop": "AURORA",
+      "labelFont": { "file": "Nunito[wght].ttf" },
+      "displayFont": { "file": "Righteous-Regular.ttf" },
+      "panelCardShape": { "kind": "SQUIRCLE", "size": 0.35 },
+      "tileShape": { "kind": "PILL", "size": 0 },
+      "colors": { "accent": "#FFC86BFF", "accent2": "#FFFF4D6D", "background": "#FF12061F", "panel": "#FF1F0B33" },
+      "glow": true,
+      "liftedBackdrop": true,
+      "custom": {
+        "gauge": { "kind": "RING", "thickness": 0.1, "roundCaps": true, "colors": "SPECTRUM", "glow": true }
+      }
+    }
+  ]
+}
